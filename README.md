@@ -1,50 +1,54 @@
+# Parking Lot System
 
-# Hệ thống tìm kiếm vị trí đỗ xe
+## 1. Introduction  
+In the context of the growing number of cars, finding a parking space becomes increasingly difficult and time-consuming. This project aims to design a **smart parking lot system** that helps users easily locate available parking spots.
 
-## Giới thiệu
-Trong bối cảnh số lượng ô tô ngày càng gia tăng, việc tìm kiếm chỗ đỗ xe trở nên khó khăn và gây lãng phí thời gian. Đề tài “Thiết kế mô hình hệ thống tìm kiếm vị trí đỗ xe ô tô” nhằm giải quyết vấn đề này bằng cách cung cấp giải pháp hiện đại, giúp người dùng dễ dàng tìm kiếm các vị trí đỗ xe còn trống.
+The system uses:  
+- **Arduino Mega 2560** microcontroller, programmed in C.  
+- An LCD screen to display the real-time number of free parking spots.  
+- Infrared (IR) sensors to detect cars entering and exiting.  
+- Automatic barriers controlled by SG90 servo motors.  
+- **RFID** technology to manage access to the parking lot.  
+- A **Django** web application (Python) that allows users to check parking status and reserve spaces online.  
+- Communication between the hardware (Arduino + ESP32) and the web app via UART.
 
-Hệ thống sử dụng vi điều khiển Arduino Mega 2560 lập trình bằng ngôn ngữ C, kết hợp với màn hình LCD để cung cấp thông tin thời gian thực về số lượng chỗ đỗ xe còn lại. Cảm biến hồng ngoại (IR) được sử dụng để phát hiện xe vào và ra khỏi bãi đỗ xe. Mô hình phần cứng được thiết kế khoa học, tích hợp rào chắn tự động với động cơ servo SG90 và công nghệ RFID để quản lý ra vào.
+## 2. Main Features  
+- Real-time display of available parking spots on the LCD screen.  
+- Detection of cars entering and leaving using IR sensors.  
+- Automatic barrier control using SG90 servo motors.  
+- Access control with RFID.  
+- Web interface for checking parking status and booking online.  
+- Role-based access: admin, parking lot owner, customer.  
+- Integration between hardware (Arduino/ESP32) and the web application.
 
-Trang web của hệ thống được phát triển bằng Python, sử dụng framework Django, cho phép người dùng kiểm tra tình trạng các chỗ đỗ xe và đặt chỗ trực tuyến. Website được thiết kế theo kiến trúc MVT (Model-View-Template), kết hợp giao tiếp với vi điều khiển Arduino Mega 2560 và ESP32 thông qua chuẩn UART. Dữ liệu từ các cảm biến được xử lý và cập nhật liên tục lên website, đảm bảo cung cấp thông tin kịp thời và chính xác.
+## 3. Technologies Used  
+- Programming languages: **C**, **Python**  
+- Web framework: Django  
+- Microcontrollers: Arduino Mega 2560, ESP32  
+- Display: 20×4 LCD  
+- Sensors: Infrared (IR) sensors  
+- Actuator: SG90 servo motor  
+- Identification: RFID  
+- Communication protocol: UART  
 
-## Các tính năng chính
-- Hiển thị thông tin thời gian thực về số lượng chỗ đỗ xe còn lại qua màn hình LCD.
-- Theo dõi xe vào và ra bằng cảm biến hồng ngoại IR.
-- Tự động điều khiển rào chắn bằng động cơ servo SG90.
-- Quản lý xe ra vào thông qua công nghệ RFID.
-- Giao diện web cho phép kiểm tra tình trạng chỗ đỗ và đặt chỗ trực tuyến.
-- Hệ thống phân cấp quản lý bãi đỗ xe: quản trị viên, chủ bãi xe và khách hàng.
-- Tích hợp giao tiếp giữa hệ thống Arduino và trang web qua UART.
+## 4. Demo Images  
+### System Model  
+![System Model](readme_images/model_system.png)  
+![Block Diagram](readme_images/block_diagram.png)
 
-## Hình ảnh minh họa
+### Web Interface  
+![Web Home Page](readme_images/web_home.png)
 
-### Mô hình hệ thống
-<img src="readme_images/mohinhhethong.png" alt="Mô hình hệ thống của đề tài" width="300px" />
-<img src="readme_images/sodokhoi.png" alt="Sơ đồ khối hệ thống" width="300px" />
+### Hardware Setup  
+![Hardware Overview](readme_images/hardware_overview.png)  
+![Parking Slot Hardware](readme_images/hardware_slot.png)
 
-### Giao diện trang web
-<img src="readme_images/giaodientrangchu.png" alt="Giao diện trang chủ" width="300px" />
+## 5. Demo Video  
+Watch a demonstration of the system in action on [YouTube](https://youtu.be/rE3_HVR2oAg).
 
-### Mô hình phần cứng
-<img src="readme_images/mohinhphancungtong.png" alt="Mô hình phần cứng tổng thể" width="300px" />
-<img src="readme_images/mohinhphancungtaivitridoxe.png" alt="Mô hình phần cứng tại vị trí đỗ xe ô tô" width="300px" />
+## Detailed Documentation
+You can download the full project documentation in PDF format at the following link:  
+[Download the project documentation](https://drive.google.com/file/d/1lAmccCnmShYzYUMBf83VBdPLXpxvZLgz/view?usp=sharing).
 
-## Video minh họa
-Xem video trình diễn cách hoạt động của hệ thống tại [YouTube](https://youtu.be/rE3_HVR2oAg).
-
-## Công nghệ sử dụng
-- Ngôn ngữ lập trình: C, Python
-- Framework web: Django
-- Vi điều khiển: Arduino Mega 2560, ESP32
-- Động cơ servo: SG90
-- Màn hình hiển thị: LCD 20x4
-- Cảm biến: Hồng ngoại (IR)
-- Công nghệ nhận dạng: RFID
-- Giao thức: UART
-
-## Tài liệu chi tiết
-Bạn có thể tải xuống tài liệu chi tiết của đồ án dưới dạng PDF tại liên kết sau: [Tải xuống tài liệu đồ án](https://drive.google.com/file/d/1lAmccCnmShYzYUMBf83VBdPLXpxvZLgz/view?usp=sharing).
-
-## Đóng góp
-Mọi đóng góp và phản hồi vui lòng liên hệ qua GitHub hoặc email của tác giả.
+## Contribution
+For any contributions or feedback, please contact the author via GitHub or email.
